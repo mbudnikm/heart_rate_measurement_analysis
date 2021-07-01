@@ -57,7 +57,7 @@ np.save('results_mse', scores_mse)
 np.save('results_r2', scores_r2)
 
 scores_r2 = np.load('results_r2.npy')
-scores_mean_squared_error = np.load('results_mse.npy')
+scores_mse = np.load('results_mse.npy')
 
 alfa = .05
 
@@ -76,7 +76,7 @@ p_value_mse = np.zeros((len(regs), len(regs)))
 
 for i in range(len(regs)):
     for j in range(len(regs)):
-        t_statistic_mse[i, j], p_value_mse[i, j] = ttest_rel(scores_mean_squared_error[i], scores_mean_squared_error[j])
+        t_statistic_mse[i, j], p_value_mse[i, j] = ttest_rel(scores_mse[i], scores_mse[j])
 #print("\nmean squared error\nt-statistic:\n", t_statistic_mean_squared_error, "\n\np-value:\n", p_value_mean_squared_error)
 
 headers = ["Linear", "Logistic", "Huber"]
