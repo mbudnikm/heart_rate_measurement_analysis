@@ -1,0 +1,50 @@
+Linear: 2.795 (0.341)
+Logistic: 60.113 (3.776)
+Huber: 2.669 (0.392)
+
+mean squared error
+t-statistic:
+ [[         nan -44.02673985   1.99204789]
+ [ 44.02673985          nan  44.10175012]
+ [ -1.99204789 -44.10175012          nan]] 
+
+p-value:
+ [[           nan 8.03880838e-12 7.75403229e-02]
+ [8.03880838e-12            nan 7.91709608e-12]
+ [7.75403229e-02 7.91709608e-12            nan]]
+
+mean squared error
+t-statistic:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear     nan         -44.027    1.992
+Logistic    44.027     nan       44.102
+Huber       -1.992     -44.102  nan 
+
+p-value:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear     nan           0.000    0.076
+Logistic     0.000     nan        0.000
+Huber        0.076       0.000  nan
+
+Advantage MSE:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear           0           0        1
+Logistic         1           0        1
+Huber            0           0        0
+
+Statistical significance (alpha = 0.05):
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear           0           1        0
+Logistic         1           0        1
+Huber            0           1        0
+
+MSE - Statistically significantly better:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear           0           0        0
+Logistic         1           0        1
+Huber            0           0        0

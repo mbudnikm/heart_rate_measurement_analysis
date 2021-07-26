@@ -1,0 +1,50 @@
+Linear: 0.942 (0.009)
+Logistic: -0.247 (0.112)
+Huber: 0.944 (0.010)
+
+r2
+t-statistic:
+ [[         nan  32.30169065  -2.00426173]
+ [-32.30169065          nan -32.65545868]
+ [  2.00426173  32.65545868          nan]] 
+
+p-value:
+ [[           nan 1.28405463e-10 7.60285489e-02]
+ [1.28405463e-10            nan 1.16502749e-10]
+ [7.60285489e-02 1.16502749e-10            nan]]
+
+r2
+t-statistic:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear     nan          32.302   -2.004
+Logistic   -32.302     nan      -32.655
+Huber        2.004      32.655  nan 
+
+p-value:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear     nan           0.000    0.076
+Logistic     0.000     nan        0.000
+Huber        0.076       0.000  nan
+
+Advantage r2:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear           0           1        0
+Logistic         0           0        0
+Huber            1           1        0
+
+Statistical significance (alpha = 0.05):
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear           0           1        0
+Logistic         1           0        1
+Huber            0           1        0
+
+r2 - Statistically significantly better:
+             Linear    Logistic    Huber
+--------  --------  ----------  -------
+Linear           0           1        0
+Logistic         0           0        0
+Huber            0           1        0
