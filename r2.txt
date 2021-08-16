@@ -1,50 +1,71 @@
 Linear: 0.942 (0.009)
-Logistic: -0.247 (0.112)
 Huber: 0.944 (0.010)
+Lasso: 0.942 (0.009)
+Decission Tree: 0.901 (0.023)
+MLP: 0.840 (0.034)
 
 r2
 t-statistic:
- [[         nan  32.30169065  -2.00426173]
- [-32.30169065          nan -32.65545868]
- [  2.00426173  32.65545868          nan]] 
+ [[         nan  -2.00426173   0.42460624   5.016412    10.51593025]
+ [  2.00426173          nan   1.85127726   5.60459604  11.27468544]
+ [ -0.42460624  -1.85127726          nan   4.97412964  10.5007782 ]
+ [ -5.016412    -5.60459604  -4.97412964          nan   4.71583406]
+ [-10.51593025 -11.27468544 -10.5007782   -4.71583406          nan]] 
 
 p-value:
- [[           nan 1.28405463e-10 7.60285489e-02]
- [1.28405463e-10            nan 1.16502749e-10]
- [7.60285489e-02 1.16502749e-10            nan]]
+ [[           nan 7.60285489e-02 6.81093912e-01 7.22612830e-04
+  2.35046296e-06]
+ [7.60285489e-02            nan 9.71532998e-02 3.32312252e-04
+  1.30718775e-06]
+ [6.81093912e-01 9.71532998e-02            nan 7.65563853e-04
+  2.37904563e-06]
+ [7.22612830e-04 3.32312252e-04 7.65563853e-04            nan
+  1.09548637e-03]
+ [2.35046296e-06 1.30718775e-06 2.37904563e-06 1.09548637e-03
+             nan]]
 
 r2
 t-statistic:
-             Linear    Logistic    Huber
---------  --------  ----------  -------
-Linear     nan          32.302   -2.004
-Logistic   -32.302     nan      -32.655
-Huber        2.004      32.655  nan 
+                  Linear    Huber    Lasso    Decision Tree      MLP
+-------------  --------  -------  -------  ---------------  -------
+Linear          nan       -2.004    0.425            5.016   10.516
+Huber             2.004  nan        1.851            5.605   11.275
+Lasso            -0.425   -1.851  nan                4.974   10.501
+Decision Tree    -5.016   -5.605   -4.974          nan        4.716
+MLP             -10.516  -11.275  -10.501           -4.716  nan 
 
 p-value:
-             Linear    Logistic    Huber
---------  --------  ----------  -------
-Linear     nan           0.000    0.076
-Logistic     0.000     nan        0.000
-Huber        0.076       0.000  nan
+                  Linear    Huber    Lasso    Decision Tree      MLP
+-------------  --------  -------  -------  ---------------  -------
+Linear          nan        0.076    0.681            0.001    0.000
+Huber             0.076  nan        0.097            0.000    0.000
+Lasso             0.681    0.097  nan                0.001    0.000
+Decision Tree     0.001    0.000    0.001          nan        0.001
+MLP               0.000    0.000    0.000            0.001  nan
 
 Advantage r2:
-             Linear    Logistic    Huber
---------  --------  ----------  -------
-Linear           0           1        0
-Logistic         0           0        0
-Huber            1           1        0
+                  Linear    Huber    Lasso    Decision Tree    MLP
+-------------  --------  -------  -------  ---------------  -----
+Linear                0        0        1                1      1
+Huber                 1        0        1                1      1
+Lasso                 0        0        0                1      1
+Decision Tree         0        0        0                0      1
+MLP                   0        0        0                0      0
 
 Statistical significance (alpha = 0.05):
-             Linear    Logistic    Huber
---------  --------  ----------  -------
-Linear           0           1        0
-Logistic         1           0        1
-Huber            0           1        0
+                  Linear    Huber    Lasso    Decision Tree    MLP
+-------------  --------  -------  -------  ---------------  -----
+Linear                0        0        0                1      1
+Huber                 0        0        0                1      1
+Lasso                 0        0        0                1      1
+Decision Tree         1        1        1                0      1
+MLP                   1        1        1                1      0
 
 r2 - Statistically significantly better:
-             Linear    Logistic    Huber
---------  --------  ----------  -------
-Linear           0           1        0
-Logistic         0           0        0
-Huber            0           1        0
+                  Linear    Huber    Lasso    Decision Tree    MLP
+-------------  --------  -------  -------  ---------------  -----
+Linear                0        0        0                1      1
+Huber                 0        0        0                1      1
+Lasso                 0        0        0                1      1
+Decision Tree         0        0        0                0      1
+MLP                   0        0        0                0      0
