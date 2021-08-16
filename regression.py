@@ -1,12 +1,15 @@
 from numpy import genfromtxt
 import numpy as np
-from sklearn.linear_model import LinearRegression, LogisticRegression, HuberRegressor
+from sklearn.linear_model import LinearRegression, LogisticRegression, HuberRegressor, Lasso
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.neural_network import MLPRegressor
 from sklearn.base import clone
 from sklearn.model_selection import RepeatedKFold
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 from scipy.stats import ttest_rel
 from tabulate import tabulate
+#from matplotlib import pyplot as plt
 
 f_r2 = open("r2.txt", "a+")
 f_mse = open("mse.txt", "a+")
@@ -21,8 +24,11 @@ y = data[:, -1].astype(int)
 
 regs = {
     'Linear': LinearRegression(),
-    'Logistic': LogisticRegression(),
-    'Huber': HuberRegressor()
+    # 'Logistic': LogisticRegression(),
+    'Huber': HuberRegressor(),
+    'Lasso': Lasso(alpha=1),
+    'Decission Tree': DecisionTreeRegressor(max_depth=5),
+    'MLP': MLPRegressor(random_state=1, alpha=0)
 }
 
 n_splits = 2
@@ -79,8 +85,8 @@ for i in range(len(regs)):
         t_statistic_mse[i, j], p_value_mse[i, j] = ttest_rel(scores_mse[i], scores_mse[j])
 print("\nmean squared error\nt-statistic:\n", t_statistic_mse, "\n\np-value:\n", p_value_mse, file=f_mse)
 
-headers = ["Linear", "Logistic", "Huber"]
-names_column = np.array([["Linear"], ["Logistic"], ["Huber"]])
+headers = ["Linear", "Huber", "Lasso", "Decision Tree", "MLP"]
+names_column = np.array([["Linear"], ["Huber"], ["Lasso"], ["Decision Tree"], ["MLP"]])
 
 # r2
 t_statistic_table_r2 = np.concatenate((names_column, t_statistic_r2), axis=1)
